@@ -14,7 +14,7 @@ export const projects: Project[] = [
     slug: "restobot",
     emoji: "🍽️",
     title: "AI Restaurant Assistant",
-    image: "landing.png",
+    image: "signup.png",
     features: [
       "Natural language ordering via chat",
       "Role-based access (admin/customer)",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     slug: "dr-aria",
     emoji: "🩺",
     title: "Medical AI Assistant (Dr. Aria)",
-    image: "landing.png",
+    image: "signup.png",
     features: [
       "Pinecone RAG",
       "Groq LLM",
