@@ -67,6 +67,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     </section>
   </Reveal>
 )}
+
+
+
       </div>
     </main>
   );
