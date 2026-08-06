@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { projects } from "@/lib/projects";
+import {ProjectCard} from "@/components/ProjectCard"
 
 export default function Projects() {
   return (
@@ -10,27 +11,24 @@ export default function Projects() {
           Featured Projects
         </h2>
       </Reveal>
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {projects.map((p, i) => (
-          <Reveal key={p.slug} delay={i * 0.1}>
-            <Link
-              href={`/projects/${p.slug}`}
-              className="block border border-gray-800 rounded-xl p-6 h-full hover:border-gray-500 transition"
-            >
-              <div className="text-3xl mb-3">{p.emoji}</div>
-              <h3 className="text-xl font-semibold mb-4">{p.title}</h3>
-              <ul className="space-y-1 text-sm text-gray-400 mb-4">
-                {p.features.map((f) => (
-                  <li key={f}>✓ {f}</li>
-                ))}
-              </ul>
-              <span className="text-sm text-gray-300 underline underline-offset-4">
-                View Details →
-              </span>
-            </Link>
-          </Reveal>
-        ))}
-      </div>
+<div className="max-w-6xl mx-auto space-y-6">
+  <div className="grid md:grid-cols-2 gap-6">
+    {projects
+      .filter((p) => p.slug !== "task-manager")
+      .map((p, i) => (
+        <Reveal key={p.slug} delay={i * 0.1}>
+          <ProjectCard project={p} />
+        </Reveal>
+      ))}
+  </div>
+  {projects
+    .filter((p) => p.slug === "task-manager")
+    .map((p) => (
+      <Reveal key={p.slug}>
+        <ProjectCard project={p} layout="row" />
+      </Reveal>
+    ))}
+</div>
     </section>
   );
 }
