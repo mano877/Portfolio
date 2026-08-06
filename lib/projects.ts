@@ -105,9 +105,16 @@ export const projects: Project[] = [
   lessonsLearned:
     "Modeling standalone vs. project-scoped tasks in one table (nullable project_id) avoided duplicating CRUD logic, while My Tasks stayed a fully separate table since its shape never overlapped with project tasks. A dedicated /chat/summary endpoint let the frontend render an instant welcome banner without waiting on an LLM round trip, feeding the same summary data into the chat context. Soft-delete and archive as two distinct states made an accidental-delete recovery flow possible without extra tables, and designing Redis caching to fail open meant the API never went down because of an unrelated dependency.",
   screenshots: [
-    "landing.png", "login.png", "signup.png", "dashboard.png",
-    "chat.png", "my-tasks.png", "new-task.png", "projects.png",
-    "analytics.png", "settings.png",
+    "/projects/task-manager/landing.png",
+    "/projects/task-manager/login.png",
+    "/projects/task-manager/signup.png",
+    "/projects/task-manager/dashboard.png",
+    "/projects/task-manager/chat.png",
+    "/projects/task-manager/my-tasks.png",
+    "/projects/task-manager/new-task.png", 
+    "/projects/task-manager/projects.png",
+    "/projects/task-manager/analytics.png", 
+    "/projects/task-manager/settings.png",
   ],
 },
 
