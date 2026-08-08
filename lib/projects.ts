@@ -1,6 +1,6 @@
 export type Project = {
   slug: string;
-  emoji: string;
+  icon: "restobot" | "dr-aria" | "task-manager";
   title: string;
   outcome: string;
   image: string;
@@ -13,7 +13,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "restobot",
-    emoji: "🍽️",
+    icon: "restobot",
     title: "Restaurant AI Assistant",
     outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
     image: "signup.png",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     slug: "dr-aria",
-    emoji: "🩺",
+    icon: "dr-aria",
     title: "AI Medical Document Assistant (Dr. Aria)",
     outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
     image: "signup.png",
@@ -81,30 +81,24 @@ export const projects: Project[] = [
   
     {
   slug: "task-manager",
-  emoji: "🤖",
+  icon: "task-manager",
   title: "AI Task Management System",
   outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
   features: [
     "JWT auth with bcrypt-hashed passwords and protected routes",
-    "Projects (CRUD) each with their own scoped tasks",
-    "My Tasks independent personal task system with status/priority/category/tags, search, filter, sort, pagination",
-    "Full task lifecycle: archive → trash (soft-delete) → restore / permanent delete",
-    "AI chat assistant (LangChain + Ollama) with live workspace-aware context knows what's overdue, due today, high priority",
-    "Instant, LLM-free welcome banner + quick-suggestion chips via a workspace summary endpoint",
-    "Dashboard with real productivity stats, due-today/overdue counts, recent activity feed",
-    "Analytics completion breakdown by status and priority",
-    "Settings (light/dark/system theme) and Profile pages",
-    "Rate limiting (SlowAPI) on auth and chat endpoints",
-    "Optional Redis caching with graceful fallback if unreachable",
-    "Hourly background deadline-reminder system",
-    "Alembic-managed PostgreSQL schema, Docker Compose stack, GitHub Actions CI (pytest)",
+    "Projects (CRUD) each scoped to their own tasks, plus a fully separate personal task system with search, filter, sort, and pagination",
+    "Full task lifecycle: archive → trash (soft-delete) → restore or permanent delete",
+    "AI chat assistant (LangChain + Ollama) with live, workspace-aware context that knows what's overdue, due today, or high priority",
+    "Dashboard with real productivity stats, due-today/overdue counts, and status/priority analytics",
+    "Alembic-managed PostgreSQL schema, Docker Compose stack, and GitHub Actions CI (pytest)",
   ],
   architecture: [
     "FastAPI app layered into routers (HTTP + auth + validation) → services (business logic, raw SQL via psycopg2, no ORM) → PostgreSQL",
     "Redis sits alongside as an optional cache that fails open on any error",
     "Chat endpoint composes a live workspace summary (My Tasks + Projects) and injects it as LLM context (LangChain + Ollama llama3.1) on every call",
-    "React SPA talks to the API over a typed Axios client",
+    "Rate limiting (SlowAPI) on auth/chat endpoints, an hourly background job for deadline reminders, and an instant LLM-free welcome banner backed by the same summary endpoint",
+    "React SPA talks to the API over a typed Axios client, with light/dark/system theme settings and profile pages",
   ],
   lessonsLearned:
     "Modeling standalone vs. project-scoped tasks in one table (nullable project_id) avoided duplicating CRUD logic, while My Tasks stayed a fully separate table since its shape never overlapped with project tasks. A dedicated /chat/summary endpoint let the frontend render an instant welcome banner without waiting on an LLM round trip, feeding the same summary data into the chat context. Soft-delete and archive as two distinct states made an accidental-delete recovery flow possible without extra tables, and designing Redis caching to fail open meant the API never went down because of an unrelated dependency.",

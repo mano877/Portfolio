@@ -3,6 +3,14 @@ import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
+import { ChefHat, Stethoscope, ListChecks, ArrowLeft } from "lucide-react";
+
+const ICONS = {
+  restobot: ChefHat,
+  "dr-aria": Stethoscope,
+  "task-manager": ListChecks,
+} as const;
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -17,16 +25,23 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
+  const Icon = ICONS[project.icon];
 
   return (
     <main className="min-h-screen text-white px-6 py-20">
       <div className="max-w-3xl mx-auto">
-        <Link href="/#projects" className="text-sm text-gray-400 hover:text-white">
-          ← Back to projects
+        <Link
+          href="/#work"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-accent transition-colors"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+          Back to projects
         </Link>
 
         <Reveal>
-          <div className="text-5xl mt-6 mb-4">{project.emoji}</div>
+          <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 mt-6 mb-4">
+            <Icon className="w-7 h-7 text-accent" />
+          </div>
           <h1 className="text-3xl md:text-5xl font-bold mb-8">{project.title}</h1>
         </Reveal>
 {project.screenshots && (

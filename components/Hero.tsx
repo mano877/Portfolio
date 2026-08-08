@@ -47,7 +47,7 @@ export default function Hero() {
   transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
   className="mt-4 text-gray-300 text-lg font-medium"
 >
-  AI Developer . Backend Engineer . Full-Stack Developer 
+  AI Developer • Backend Engineer • Full-Stack Developer
 </motion.p>
 
 <motion.p

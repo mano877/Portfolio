@@ -13,7 +13,7 @@ export default function Services() {
     <section id="services" className="min-h-screen text-white px-6 py-24">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What I Do</h2>
       <p className="text-gray-400 text-center mb-12 max-w-xl mx-auto">
-        I help businesses build AI systems that solve real problems not just demos, but working products.
+        I help businesses build AI systems that solve real problems — not just demos, but working products.
       </p>
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {services.map(({ icon: Icon, title, description }) => (

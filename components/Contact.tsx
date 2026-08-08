@@ -5,6 +5,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
 
 const highlights = [
   { icon: Phone, title: "Free Consultation", subtitle: "30 Minutes" },
@@ -47,13 +48,20 @@ export default function Contact() {
           <MessageCircle className="w-4 h-4" />
           <span>Available for Freelance / Contract / Remote</span>
         </div>
+        <a
+          href="https://github.com/mano877/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-accent transition-colors"
+        >
+          <FiGithub className="w-4 h-4" />
+          <span>github.com/mano877</span>
+        </a>
       </div>
 
       {/* CTA */}
       <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=emanbashir302@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="mailto:emanbashir302@gmail.com"
         className="inline-block px-8 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition"
       >
         Get In Touch
