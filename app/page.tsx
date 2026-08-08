@@ -11,11 +11,29 @@ import CodeShowcase from "@/components/CodeShowcase";
 import ChatWidget from "@/components/ChatWidget";
 import EasterEgg from "@/components/EasterEgg";
 import BootSequence from "@/components/BootSequence";
+import Navbar from "@/components/NavBar";
+import Process from "@/components/Process";
+import About from "@/components/About";
+import Services from "@/components/Services";
+
 
 
 export default function Home() {
   return (
-    <main>
+    <>
+    <Navbar />
+     <main>
+      <Hero />
+        <Services />
+        <Projects />
+        <About />
+        <Process />
+        <Contact />
+        </main>
+        </>
+  );
+}
+        <main>
       <BootSequence/>
       <Hero />
       <WhyHireMe />
@@ -33,5 +51,4 @@ export default function Home() {
       <ChatWidget />
       <EasterEgg />
     </main>
-  );
-}
+  

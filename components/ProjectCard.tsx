@@ -32,7 +32,8 @@ export function ProjectCard({ project, layout = "column" }: ProjectCardProps) {
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
         <div className="text-3xl mb-2">{project.emoji}</div>
-        <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+        <p className="text-sm text-emerald-400 mb-3">{project.outcome}</p>
 
         <ul
           className={`space-y-1.5 text-sm text-white/80 ${

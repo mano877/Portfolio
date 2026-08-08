@@ -1,12 +1,12 @@
 import Reveal from "@/components/Reveal";
 
 const points = [
-  { title: "Production-Ready Code", desc: "Clean, tested, and built to run in real environments not just demos." },
-  { title: "End-to-End Ownership", desc: "From database design to deployment, I handle the full stack." },
-  { title: "AI That Actually Works", desc: "Practical RAG and LLM integrations solving real problems, not gimmicks." },
-  { title: "Fast, Reliable APIs", desc: "Performance and error handling built in from the start." },
-  { title: "Clear Communication", desc: "I explain technical decisions in plain language, no jargon walls." },
-  { title: "Built to Scale", desc: "Architecture decisions made with growth and maintainability in mind." },
+  { title:"Fast Delivery", desc: "Delivering high-quality solutions quickly without compromising reliability, maintainability, or attention to detail." },
+  { title: "Clean & Scalable Code", desc: "Writing well-structured, readable, and maintainable code that is easy to extend, debug, and collaborate on." },
+  { title: "Business Oriented Development", desc: "Building solutions with business goals in mind focusing on user experience, scalability, performance, and long-term value rather than just writing code.." },
+  { title: "AI & Backend Experties", desc: "Experienced in building AI-powered applications, REST APIs, RAG systems, automation workflows, and scalable backend architectures." }, 
+  { title: "Clear Communication", desc: "Providing consistent updates, discussing ideas proactively, and ensuring transparent communication throughout the project lifecycle." },
+  { title: "Scalable by Design", desc: "Building reliable architectures that support growth without sacrificing performance." },
 ];
 
 export default function WhyHireMe() {

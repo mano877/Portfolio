@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   emoji: string;
   title: string;
+  outcome: string;
   image: string;
   features: string[];
   architecture?: string[];
@@ -13,7 +14,8 @@ export const projects: Project[] = [
   {
     slug: "restobot",
     emoji: "🍽️",
-    title: "AI Restaurant Assistant",
+    title: "Restaurant AI Assistant",
+    outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
     image: "signup.png",
     features: [
       "Natural language ordering via chat",
@@ -45,7 +47,8 @@ export const projects: Project[] = [
   {
     slug: "dr-aria",
     emoji: "🩺",
-    title: "Medical AI Assistant (Dr. Aria)",
+    title: "AI Medical Document Assistant (Dr. Aria)",
+    outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
     image: "signup.png",
     features: [
       "Pinecone RAG",
@@ -79,17 +82,18 @@ export const projects: Project[] = [
     {
   slug: "task-manager",
   emoji: "🤖",
-  title: "Mr. TaskBot",
+  title: "AI Task Management System",
+  outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
   features: [
     "JWT auth with bcrypt-hashed passwords and protected routes",
     "Projects (CRUD) each with their own scoped tasks",
-    "My Tasks — independent personal task system with status/priority/category/tags, search, filter, sort, pagination",
+    "My Tasks independent personal task system with status/priority/category/tags, search, filter, sort, pagination",
     "Full task lifecycle: archive → trash (soft-delete) → restore / permanent delete",
-    "AI chat assistant (LangChain + Ollama) with live workspace-aware context — knows what's overdue, due today, high priority",
+    "AI chat assistant (LangChain + Ollama) with live workspace-aware context knows what's overdue, due today, high priority",
     "Instant, LLM-free welcome banner + quick-suggestion chips via a workspace summary endpoint",
     "Dashboard with real productivity stats, due-today/overdue counts, recent activity feed",
-    "Analytics — completion breakdown by status and priority",
+    "Analytics completion breakdown by status and priority",
     "Settings (light/dark/system theme) and Profile pages",
     "Rate limiting (SlowAPI) on auth and chat endpoints",
     "Optional Redis caching with graceful fallback if unreachable",
