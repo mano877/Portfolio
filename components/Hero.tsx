@@ -82,7 +82,7 @@ export default function Hero() {
             onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
             className="px-6 py-3 border border-white rounded-lg font-medium"
           >
-            View My Work
+            View My work
           </MagneticButton>
         </motion.div>
       </div>

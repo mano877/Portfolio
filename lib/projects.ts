@@ -1,6 +1,6 @@
 export type Project = {
   slug: string;
-  icon: "restobot" | "dr-aria" | "task-manager";
+  emoji: "restobot" | "dr-aria" | "task-manager";
   title: string;
   outcome: string;
   image: string;
@@ -13,7 +13,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "restobot",
-    icon: "restobot",
+    emoji: "restobot",
     title: "Restaurant AI Assistant",
     outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
     image: "signup.png",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     slug: "dr-aria",
-    icon: "dr-aria",
+    emoji: "dr-aria",
     title: "AI Medical Document Assistant (Dr. Aria)",
     outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
     image: "signup.png",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   
     {
   slug: "task-manager",
-  icon: "task-manager",
+  emoji: "task-manager",
   title: "AI Task Management System",
   outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
