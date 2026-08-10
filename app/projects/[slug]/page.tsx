@@ -4,7 +4,7 @@ import { getProject, projects } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
 import { ChefHat, Stethoscope, ListChecks} from "lucide-react";
-import BackToProjects from "@/components/BackToProjects";
+import BackToProjects from "@/components/BackToWork";
 
 const emoji = {
   restobot: ChefHat,

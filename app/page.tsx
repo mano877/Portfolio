@@ -12,12 +12,12 @@ import ScrollHandler from "@/components/ScrollHandler";
 export default function Home() {
   return (
     <>
-     <ScrollHandler />
       <Navbar />
       <main>
         <Hero />
         <Services />
         <Work />
+        <ScrollHandler />
         <About />
         <Process />
         <Contact />

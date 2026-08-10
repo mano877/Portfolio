@@ -10,7 +10,7 @@ export type Service = {
   features: string[];
   example: string;
   technology: string[];
-  startingPrice: string;
+  Price: string;
 };
 
 export const services: Service[] = [
@@ -49,7 +49,7 @@ export const services: Service[] = [
     example:
       "A customer asks a question about an order, product, service, or policy. The chatbot understands the request, retrieves the relevant information, and responds. If the issue requires a human, it can hand the conversation over.",
     technology: ["LLMs", "RAG", "Vector Databases", "FastAPI", "PostgreSQL", "REST APIs", "Authentication", "Docker"],
-    startingPrice: "From $300",
+    Price: "$300",
   },
   {
     slug: "knowledge-base-chatbot",
@@ -86,7 +86,7 @@ export const services: Service[] = [
     example:
       "An employee asks: “What is our refund policy for international orders?” The assistant searches the approved company documentation and provides a relevant answer based on that information.",
     technology: ["LLMs", "RAG", "Embeddings", "Vector Databases", "FastAPI", "PostgreSQL", "Docker"],
-    startingPrice: "From $500",
+    Price: "$500",
   },
   {
     slug: "dashboard-automation",
@@ -118,7 +118,7 @@ export const services: Service[] = [
     example:
       "Instead of manually checking records, updating data, generating reports, and sending notifications: Data → Automation → Dashboard → Action.",
     technology: ["React", "FastAPI", "PostgreSQL", "REST APIs", "Background Tasks", "Docker"],
-    startingPrice: "From $1000",
+    Price: "$1000",
   },
 ];
 
