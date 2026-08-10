@@ -149,7 +149,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <div>
-              <p className="text-2xl font-semibold">{service.startingPrice}</p>
+              <p className="text-2xl font-semibold">{service.Price}</p>
               <p className="text-xs text-gray-500 mt-1 max-w-sm">
                 Final pricing depends on features, integrations, complexity, and project requirements.
               </p>
