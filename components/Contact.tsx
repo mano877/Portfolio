@@ -8,7 +8,7 @@ import {
 import { FiGithub } from "react-icons/fi";
 
 const highlights = [
-  { icon: Phone, title: "Free Consultation", subtitle: "30 Minutes" },
+  { icon: Phone, title: "Free Consultation", subtitle: "30-Minutes" },
   { icon: Zap, title: "Fast Response", subtitle: "< 24 Hours" },
   { icon: Handshake, title: "Long-Term Partner", subtitle: "Beyond Delivery" },
 ];

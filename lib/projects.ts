@@ -1,9 +1,11 @@
 export type Project = {
   slug: string;
-  emoji: "restobot" | "dr-aria" | "task-manager";
+  emoji: "restobot" | "dr-aria" | "task-manager" | "customer-care";
+  category: string;
   title: string;
   outcome: string;
   image: string;
+  cardImageFit?: "cover" | "contain";
   features: string[];
   architecture?: string[];
   lessonsLearned?: string;
@@ -14,6 +16,7 @@ export const projects: Project[] = [
   {
     slug: "restobot",
     emoji: "restobot",
+    category: "Conversational Ordering",
     title: "Restaurant AI Assistant",
     outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
     image: "signup.png",
@@ -47,6 +50,7 @@ export const projects: Project[] = [
   {
     slug: "dr-aria",
     emoji: "dr-aria",
+    category: "Medical RAG Assistant",
     title: "AI Medical Document Assistant (Dr. Aria)",
     outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
     image: "signup.png",
@@ -82,6 +86,7 @@ export const projects: Project[] = [
     {
   slug: "task-manager",
   emoji: "task-manager",
+  category: "Workspace & Task Automation",
   title: "AI Task Management System",
   outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
@@ -115,6 +120,46 @@ export const projects: Project[] = [
     "/projects/task-manager/settings.png",
   ],
 },
+
+  {
+    slug: "customer-care",
+    emoji: "customer-care",
+    category: "AI-First Support Platform",
+    title: "AI Customer Care Platform",
+    outcome:
+      "Turns a support inbox into an AI-first workflow. The bot resolves what it can, hands off to a human the moment it can't.",
+    image: "login.png",
+    cardImageFit: "contain",
+    features: [
+      "JWT auth with OTP verification",
+      "Role-aware dual experience (customer portal vs. agent/admin console)",
+      "Live AI chat with automatic human handoff",
+      "Agent inbox with claim/reply/resolve",
+      "Ticket queue with status & priority management",
+      "Real-time-derived analytics (no fabricated metrics)",
+    ],
+    architecture: [
+      "FastAPI backend (Clean Architecture, repository pattern) with PostgreSQL, Alembic migrations, and rotating-refresh-token JWT auth",
+      "Groq-powered chat pipeline: classify intent/sentiment → run the matching tool (orders, tickets, knowledge base) → generate a grounded reply, escalating to a human whenever confidence drops or the customer asks",
+      "React + TypeScript frontend with a single API layer and TanStack Query, rendering two distinct experiences (customer self-service vs. agent/admin console) off one role field in the JWT",
+      "Dashboard and analytics computed live from real paginated list endpoints rather than a canned stats endpoint, so every number on screen is traceable back to an actual API call",
+    ],
+    lessonsLearned:
+      "The backend was already built when I started on the frontend, and reading its contracts closely mattered more than I expected — it had customer-scoped endpoints (\"my orders\", \"my tickets\") but no admin lookup by customer id, which meant the agent console had to be designed around what the API could actually prove rather than what a typical support dashboard would want to show. I also hit two migration bugs that only surfaced against real Postgres (boolean defaults written as SQLite-style 0/1, and Alembic's version-tracking column being too narrow for this project's revision ids) — a good reminder that a green test suite against SQLite doesn't guarantee the same schema works on the database you'll actually deploy to.",
+    screenshots: [
+      "/projects/customer-care/login.png",
+      "/projects/customer-care/signup.png",
+      "/projects/customer-care/otp.png",
+      "/projects/customer-care/chat.png",
+      "/projects/customer-care/products.png",
+      "/projects/customer-care/orders.png",
+      "/projects/customer-care/tickets.png",
+      "/projects/customer-care/knowledge-base.png",
+      "/projects/customer-care/profile.png",
+      "/projects/customer-care/admin-dashboard.png",
+      "/projects/customer-care/feedback.png",
+    ],
+  },
 
     ]
   

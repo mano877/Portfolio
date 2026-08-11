@@ -149,7 +149,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <div>
-              <p className="text-2xl font-semibold">{service.Price}</p>
+              <p className="text-2xl font-semibold">{service.StartingPrice}</p>
               <p className="text-xs text-gray-500 mt-1 max-w-sm">
                 Final pricing depends on features, integrations, complexity, and project requirements.
               </p>
@@ -160,7 +160,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition w-fit"
             >
-              Book a Consultation
+              Book a Free 30-Minute Consultation
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -243,7 +243,7 @@ export default function ServicesPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition"
               >
-                Book a Free Consultation
+                Book a Free 30-Minute Consultation
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link

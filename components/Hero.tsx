@@ -60,9 +60,9 @@ export default function Hero() {
 </motion.p>
 
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-6 text-sm text-gray-400">
-          <span><span className="text-[#3EB8A9] font-semibold">3</span> AI Products Shipped</span>
-          <span><span className="text-[#3EB8A9] font-semibold">60+</span> API Endpoints</span>
-          <span><span className="text-[#3EB8A9] font-semibold">3</span> RAG Pipelines in Production</span>
+          <span><span className="text-[#3EB8A9] font-semibold">4</span> AI Products Shipped</span>
+          <span><span className="text-[#3EB8A9] font-semibold">100+</span> API Endpoints</span>
+          <span><span className="text-[#3EB8A9] font-semibold">4</span> RAG Pipelines in Production</span>
         </div>
 
         <motion.div
@@ -75,7 +75,7 @@ export default function Hero() {
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="px-6 py-3 bg-white text-black rounded-lg font-medium"
           >
-            Book a Free Consultation
+            Book a Free 30-Minute Consultation
           </MagneticButton>
           
           <MagneticButton

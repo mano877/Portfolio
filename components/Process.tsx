@@ -88,7 +88,7 @@ export default function Process() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition"
           >
-            Book a Free Consultation
+            Book a Free 30-Minute Consultation
             <span>→</span>
           </a>
         </div>

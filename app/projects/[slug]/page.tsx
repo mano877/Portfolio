@@ -3,13 +3,14 @@ import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
-import { ChefHat, Stethoscope, ListChecks} from "lucide-react";
+import { ChefHat, Stethoscope, ListChecks, Headset } from "lucide-react";
 import BackToProjects from "@/components/BackToWork";
 
 const emoji = {
   restobot: ChefHat,
   "dr-aria": Stethoscope,
   "task-manager": ListChecks,
+  "customer-care": Headset,
 } as const;
 
 export function generateStaticParams() {
