@@ -49,7 +49,7 @@ export const services: Service[] = [
     example:
       "A customer asks a question about an order, product, service, or policy. The chatbot understands the request, retrieves the relevant information, and responds. If the issue requires a human, it can hand the conversation over.",
     technology: ["LLMs", "RAG", "Vector Databases", "FastAPI", "PostgreSQL", "REST APIs", "Authentication", "Docker"],
-    StartingPrice: "$300",
+    StartingPrice: "From $300",
   },
   {
     slug: "knowledge-base-chatbot",
@@ -86,7 +86,7 @@ export const services: Service[] = [
     example:
       "An employee asks: “What is our refund policy for international orders?” The assistant searches the approved company documentation and provides a relevant answer based on that information.",
     technology: ["LLMs", "RAG", "Embeddings", "Vector Databases", "FastAPI", "PostgreSQL", "Docker"],
-    StartingPrice: "$500",
+    StartingPrice: "$From 500",
   },
   {
     slug: "dashboard-automation",
@@ -118,7 +118,7 @@ export const services: Service[] = [
     example:
       "Instead of manually checking records, updating data, generating reports, and sending notifications: Data → Automation → Dashboard → Action.",
     technology: ["React", "FastAPI", "PostgreSQL", "REST APIs", "Background Tasks", "Docker"],
-    StartingPrice: "$1000",
+    StartingPrice: "$From 1000",
   },
 ];
 
