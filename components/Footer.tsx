@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+
 
 export default function Footer() {
   return (
@@ -26,6 +27,7 @@ export default function Footer() {
         <div className="flex gap-4">
           <a href="https://github.com/mano877" aria-label="GitHub"><FiGithub size={16} /></a>
           <a href="mailto:emanbashir302@gmail.com" aria-label="Email"><Mail size={16} /></a>
+          <a href="https://www.linkedin.com/in/eman-bashir-48b9392a7/" aria-label="LinkedIn"><FiLinkedin size={16} /></a>
         </div>
       </div>
     </footer>

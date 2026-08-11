@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+
 
 const links = [
   { label: "Home", id: "top" },
@@ -46,15 +47,27 @@ export default function Navbar() {
             {i < links.length - 1 && <span className="text-gray-600">·</span>}
           </span>
         ))}
-        <a
-          href="https://github.com/mano877/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub profile"
-          className="sm:absolute sm:right-6 text-gray-400 hover:text-[#3EB8A9] transition-colors"
-        >
-          <FiGithub className="w-[18px] h-[18px]" />
-        </a>
+
+        <div className="sm:absolute sm:right-6 flex items-center gap-4">
+          <a
+            href="https://www.linkedin.com/in/eman-bashir-48b9392a7/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-gray-400 hover:text-[#3EB8A9] transition-colors"
+          >
+            <FiLinkedin className="w-[18px] h-[18px]" />
+          </a>
+          <a
+            href="https://github.com/mano877/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="text-gray-400 hover:text-[#3EB8A9] transition-colors"
+          >
+            <FiGithub className="w-[18px] h-[18px]" />
+          </a>
+        </div>
       </div>
     </nav>
   );

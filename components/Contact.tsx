@@ -5,7 +5,8 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+
 
 const highlights = [
   { icon: Phone, title: "Free Consultation", subtitle: "30-Minutes" },
@@ -40,24 +41,32 @@ export default function Contact() {
 
       {/* Contact Info */}
       <div className="flex flex-col items-center justify-center gap-3 mb-12 text-sm text-gray-300">
-        <div className="flex items-center gap-2">
-          <Mail className="w-4 h-4" />
-          <span>emanbashir302@gmail.com</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <MessageCircle className="w-4 h-4" />
-          <span>Available for Freelance / Contract / Remote</span>
-        </div>
-        <a
-          href="https://github.com/mano877/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 hover:text-accent transition-colors"
-        >
-          <FiGithub className="w-4 h-4" />
-          <span>github.com/mano877</span>
-        </a>
-      </div>
+  <div className="flex items-center gap-2">
+    <Mail className="w-4 h-4" />
+    <span>emanbashir302@gmail.com</span>
+  </div>
+  <div className="flex items-center gap-2">
+    <MessageCircle className="w-4 h-4" />
+    <span>Available for Freelance / Contract / Remote</span>
+  </div>
+  <div className="flex items-center gap-2">
+    <FiGithub className="w-4 h-4" />
+    <a href="https://github.com/mano877" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+      github.com/mano877
+    </a>
+  </div>
+  <div className="flex items-center gap-2">
+    <FiLinkedin className="w-4 h-4" />
+    <a
+      href="https://www.linkedin.com/in/eman-bashir-48b9392a7/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white transition"
+    >
+      linkedin.com/in/eman-bashir
+    </a>
+  </div>
+</div>
 
       {/* CTA */}
       <a
