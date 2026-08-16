@@ -36,13 +36,18 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
             <Icon className="w-4 h-4 text-accent" />
           </div>
           <span className="text-xs font-medium text-accent uppercase tracking-wide">
             {project.category}
           </span>
+          {project.secondaryCapability && (
+            <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300">
+              {project.secondaryCapability}
+            </span>
+          )}
         </div>
 
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>

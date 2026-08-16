@@ -11,6 +11,11 @@ export type Service = {
   example: string;
   technology: string[];
   StartingPrice: string;
+  caseStudy?: {
+    project: string;
+    description: string;
+    href: string;
+  };
 };
 
 export const services: Service[] = [
@@ -119,6 +124,12 @@ export const services: Service[] = [
       "Instead of manually checking records, updating data, generating reports, and sending notifications: Data → Automation → Dashboard → Action.",
     technology: ["React", "FastAPI", "PostgreSQL", "REST APIs", "Background Tasks", "Docker"],
     StartingPrice: "$From 1000",
+    caseStudy: {
+      project: "RestoBot",
+      description:
+        "Restaurant ordering workflow automated through an AI chatbot — from menu understanding to order creation, modification, cancellation, and billing.",
+      href: "/projects/restobot",
+    },
   },
 ];
 

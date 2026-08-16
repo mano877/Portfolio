@@ -37,7 +37,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
            <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 mt-6 mb-4">
             <Icon className="w-7 h-7 text-accent" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-8">{project.title}</h1>
+          <h1 className={`text-3xl md:text-5xl font-bold ${project.secondaryCapability ? "mb-4" : "mb-8"}`}>
+            {project.title}
+          </h1>
+          {project.secondaryCapability && (
+            <div className="flex items-center gap-2 mb-8 flex-wrap">
+              <span className="text-xs font-medium text-accent uppercase tracking-wide">
+                {project.category}
+              </span>
+              <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300">
+                {project.secondaryCapability}
+              </span>
+            </div>
+          )}
         </Reveal>
 {project.screenshots && (
   <Reveal delay={0.15}>

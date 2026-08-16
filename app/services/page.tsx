@@ -146,6 +146,24 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
           </div>
         </Reveal>
 
+        {service.caseStudy && (
+          <Reveal>
+            <div className="border border-accent/20 bg-accent/5 rounded-xl p-6 mb-10">
+              <h3 className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">
+                Case Study — {service.caseStudy.project}
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-sm mb-4">{service.caseStudy.description}</p>
+              <Link
+                href={service.caseStudy.href}
+                className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-accent transition-colors"
+              >
+                View Case Study
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </Reveal>
+        )}
+
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <div>

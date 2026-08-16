@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   emoji: "restobot" | "dr-aria" | "task-manager" | "customer-care";
   category: string;
+  secondaryCapability?: string;
   title: string;
   outcome: string;
   image: string;
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     slug: "restobot",
     emoji: "restobot",
     category: "Conversational Ordering",
+    secondaryCapability: "Business Automation",
     title: "Restaurant AI Assistant",
     outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
     image: "signup.png",
@@ -51,6 +53,7 @@ export const projects: Project[] = [
     slug: "dr-aria",
     emoji: "dr-aria",
     category: "Medical RAG Assistant",
+    secondaryCapability: "AI Insights",
     title: "AI Medical Document Assistant (Dr. Aria)",
     outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
     image: "signup.png",
@@ -87,6 +90,7 @@ export const projects: Project[] = [
   slug: "task-manager",
   emoji: "task-manager",
   category: "Workspace & Task Automation",
+  secondaryCapability: "Business Automation",
   title: "AI Task Management System",
   outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
@@ -125,6 +129,7 @@ export const projects: Project[] = [
     slug: "customer-care",
     emoji: "customer-care",
     category: "AI-First Support Platform",
+    secondaryCapability: "Business Automation",
     title: "AI Customer Care Platform",
     outcome:
       "Turns a support inbox into an AI-first workflow. The bot resolves what it can, hands off to a human the moment it can't.",
