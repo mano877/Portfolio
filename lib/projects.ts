@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     slug: "restobot",
     emoji: "restobot",
-    category: "Conversational Ordering",
+    category: "AI Knowledge Base / RAG",
     secondaryCapability: "Business Automation",
     title: "Restaurant AI Assistant",
     outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     slug: "dr-aria",
     emoji: "dr-aria",
-    category: "Medical RAG Assistant",
+    category: "AI Knowledge Base / RAG",
     secondaryCapability: "AI Insights",
     title: "AI Medical Document Assistant (Dr. Aria)",
     outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
   slug: "task-manager",
   emoji: "task-manager",
   category: "Workspace & Task Automation",
-  secondaryCapability: "Business Automation",
+  secondaryCapability: "Productivity Automation",
   title: "AI Task Management System",
   outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
@@ -128,7 +128,7 @@ export const projects: Project[] = [
   {
     slug: "customer-care",
     emoji: "customer-care",
-    category: "AI-First Support Platform",
+    category: "AI Customer Support",
     secondaryCapability: "Business Automation",
     title: "AI Customer Care Platform",
     outcome:
