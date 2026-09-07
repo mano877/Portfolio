@@ -45,7 +45,7 @@ export default function Projects() {
       </div>
 
       {visible.length > 0 ? (
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto items-stretch">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
           {visible.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.1} className="h-full">
               <ProjectCard project={p} />

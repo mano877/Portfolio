@@ -86,7 +86,7 @@ export default function ContactPage() {
             </MagneticButton>
 
             {status === "sent" && (
-              <p className="text-sm text-accent">Message sent — expect a reply soon.</p>
+              <p className="text-sm text-accent">Message sent. Expect a reply soon.</p>
             )}
             {status === "error" && (
               <p className="text-sm text-red-600">Something went wrong. Try again, or reach out directly by email.</p>

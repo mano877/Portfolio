@@ -1,37 +1,37 @@
-export default function About() {
-  const capabilities = ["Frontend", "Backend", "APIs", "Databases", "AI / RAG", "Automation", "Deployment"];
+import { Server, Bot, Workflow, Code2 } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
+const proofPoints = [
+  { icon: Server, label: "Backend Systems" },
+  { icon: Bot, label: "AI Integration" },
+  { icon: Workflow, label: "Automation" },
+  { icon: Code2, label: "Web Development" },
+];
+
+export default function About() {
   return (
     <section id="about" className="text-foreground px-6 py-24">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Behind the Work</h2>
+        <Reveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Behind the Work</h2>
 
-        <p className="text-foreground/80 leading-relaxed mb-4">
-          Behind every project is a business trying to do something better — attract more
-          customers, answer enquiries faster, simplify a workflow, or build a stronger
-          digital presence. That&apos;s where the work begins.
-        </p>
-        <p className="text-foreground/80 leading-relaxed mb-4">
-          From modern websites and full-stack applications to AI assistants and business
-          automation, each solution is shaped around a real need rather than technology
-          for its own sake. The result is digital work that looks good, works reliably,
-          and has a reason to exist.
-        </p>
-        <p className="text-muted leading-relaxed mb-4">
-          Modern digital products rarely live in one layer. A polished interface needs a
-          reliable backend. A useful AI assistant needs structured data behind it. An
-          automation workflow needs systems that can actually talk to each other. Building
-          any of it well means thinking across the whole stack.
-        </p>
+          <p className="text-foreground/80 leading-relaxed text-center mb-10">
+            Behind every project is a business trying to do something better: attract more
+            customers, simplify a workflow, or build a stronger digital presence. Good
+            technology is built around that need, across the whole stack: a reliable
+            backend, a polished interface, structured data behind an AI assistant, and the
+            automation that connects it all.
+          </p>
+        </Reveal>
 
-        <div className="flex flex-wrap gap-2 mt-6 justify-center">
-          {capabilities.map((c) => (
-            <span
-              key={c}
-              className="px-3 py-1 rounded-full border border-border bg-card text-xs text-muted"
-            >
-              {c}
-            </span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {proofPoints.map(({ icon: Icon, label }, i) => (
+            <Reveal key={label} delay={i * 0.06}>
+              <div className="flex flex-col items-center gap-2 text-center border border-border bg-card rounded-xl py-5 px-3">
+                <Icon className="w-5 h-5 text-accent" />
+                <span className="text-xs font-medium text-foreground/80">{label}</span>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

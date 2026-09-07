@@ -8,7 +8,7 @@ export type Project = {
   filterCategories: FilterCategory[];
   title: string;
   outcome: string;
-  image: string;
+  image?: string;
   cardImageFit?: "cover" | "contain";
   features: string[];
   architecture?: string[];
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     problem:
       "Restaurants running phone-in or in-person ordering deal with mistakes, slow turnaround, and staff tied up taking repetitive orders instead of running the kitchen.",
     idea:
-      "Let customers order the way they'd normally ask a person — in plain language — and have the system understand menu items, quantities, and changes on its own.",
+      "Let customers order the way they'd normally ask a person, in plain language, and have the system understand menu items, quantities, and changes on its own.",
     solution:
       "A conversational ordering assistant that uses the restaurant's own menu as a knowledge source, parses natural-language requests into structured orders, and separates admin and customer permissions so staff and diners each see what they need.",
     resultPurpose:
@@ -92,13 +92,13 @@ export const projects: Project[] = [
     ],
     builtWith: ["FastAPI", "PostgreSQL", "Pinecone (RAG)", "Groq LLM"],
     problem:
-      "Medical information is often written for clinicians, not patients — long documents, dense terminology, and no easy way to ask a follow-up question.",
+      "Medical information is often written for clinicians, not patients: long documents, dense terminology, and no easy way to ask a follow-up question.",
     idea:
       "Give people a conversational way to work through their own medical documents and get plain-language answers, without losing the thread across a longer conversation.",
     solution:
       "An AI assistant built on a retrieval pipeline over uploaded documents, with persistent multi-conversation history and features for summarizing, tracking symptoms, and getting a second opinion on demand.",
     resultPurpose:
-      "Turns a folder of medical documents into something a patient can actually have a conversation with — ask a question, get a grounded answer, come back to it later.",
+      "Turns a folder of medical documents into something a patient can actually have a conversation with: ask a question, get a grounded answer, come back to it later.",
     lessonsLearned:
       "Maintaining coherent multi-turn context across a conversation without re-sending the entire history to the LLM every time was the biggest architectural challenge. It pushed me to think carefully about what context actually needs to persist versus what can be re-retrieved from the vector store on demand.",
     screenshots: [
@@ -192,13 +192,13 @@ export const projects: Project[] = [
     problem:
       "Support inboxes fill up with the same handful of questions, while the ones that actually need a person get buried in the queue.",
     idea:
-      "Let AI resolve what it reasonably can — orders, tickets, common questions — and route everything else to a human, instead of forcing every conversation through the same slow path.",
+      "Let AI resolve what it reasonably can (orders, tickets, common questions) and route everything else to a human, instead of forcing every conversation through the same slow path.",
     solution:
       "A support platform with a role-aware customer portal and agent console, a chat pipeline that classifies intent before deciding whether to answer or escalate, and a ticket queue for the cases that need a person.",
     resultPurpose:
       "Gives a support team a system that filters and resolves routine requests on its own, so agent time goes to the conversations that actually need it.",
     lessonsLearned:
-      "The backend was already built when I started on the frontend, and reading its contracts closely mattered more than I expected — it had customer-scoped endpoints (\"my orders\", \"my tickets\") but no admin lookup by customer id, which meant the agent console had to be designed around what the API could actually prove rather than what a typical support dashboard would want to show. I also hit two migration bugs that only surfaced against real Postgres (boolean defaults written as SQLite-style 0/1, and Alembic's version-tracking column being too narrow for this project's revision ids) — a good reminder that a green test suite against SQLite doesn't guarantee the same schema works on the database you'll actually deploy to.",
+      "The backend was already built when I started on the frontend, and reading its contracts closely mattered more than I expected: it had customer-scoped endpoints (\"my orders\", \"my tickets\") but no admin lookup by customer id, which meant the agent console had to be designed around what the API could actually prove rather than what a typical support dashboard would want to show. I also hit two migration bugs that only surfaced against real Postgres (boolean defaults written as SQLite-style 0/1, and Alembic's version-tracking column being too narrow for this project's revision ids), a good reminder that a green test suite against SQLite doesn't guarantee the same schema works on the database you'll actually deploy to.",
     screenshots: [
       "/projects/customer-care/login.png",
       "/projects/customer-care/signup.png",

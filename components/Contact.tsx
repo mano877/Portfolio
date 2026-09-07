@@ -1,80 +1,39 @@
-import {
-  Phone,
-  Zap,
-  Handshake,
-  Mail,
-  MessageCircle,
-} from "lucide-react";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
-
+import { Phone, Zap, Handshake, ArrowRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const highlights = [
-  { icon: Phone, title: "Free Consultation", subtitle: "30-Minutes" },
-  { icon: Zap, title: "Fast Response", subtitle: "< 24 Hours" },
-  { icon: Handshake, title: "Long-Term Partner", subtitle: "Beyond Delivery" },
+  { icon: Phone, label: "Free Consultation" },
+  { icon: Zap, label: "Fast Response" },
+  { icon: Handshake, label: "Long-Term Partner" },
 ];
-
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 text-center max-w-6xl mx-auto">
-      {/* Heading */}
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-       Start the Conversation
-     </h2>
+    <section id="contact" className="py-32 px-6 text-center max-w-4xl mx-auto">
+      <Reveal>
+        <h2 className="text-5xl md:text-6xl font-bold mb-5 text-foreground tracking-tight">
+          Start the Conversation
+        </h2>
 
-<p className="text-accent mb-12">Average reply within 24 hours</p>
+        <p className="text-accent mb-10">Average reply within 24 hours</p>
 
-      {/* Highlights */}
-      <div className="grid sm:grid-cols-3 gap-5 max-w-4xl mx-auto mb-12">
-        {highlights.map(({ icon: Icon, title, subtitle }) => (
-          <div
-  key={title}
-  className="border border-accent/20 bg-card rounded-xl p-6 flex flex-col items-center gap-2 hover:border-accent/50 transition"
->
-  <Icon className="w-6 h-6 text-accent" />
-  <p className="font-semibold">{title}</p>
-  <p className="text-sm text-muted">{subtitle}</p>
-</div>
-        ))}
-      </div>
+        <a
+          href="mailto:emanbashir302@gmail.com"
+          className="inline-flex items-center gap-2 px-9 py-4 bg-foreground text-background rounded-lg font-medium text-lg shadow-md hover:shadow-lg transition-shadow"
+        >
+          Get In Touch
+          <ArrowRight className="w-5 h-5" />
+        </a>
 
-      {/* Contact Info */}
-      <div className="flex flex-col items-center justify-center gap-3 mb-12 text-sm text-foreground/70">
-  <div className="flex items-center gap-2">
-    <Mail className="w-4 h-4" />
-    <span>emanbashir302@gmail.com</span>
-  </div>
-  <div className="flex items-center gap-2">
-    <MessageCircle className="w-4 h-4" />
-    <span>Available for Freelance / Contract / Remote</span>
-  </div>
-  <div className="flex items-center gap-2">
-    <FiGithub className="w-4 h-4" />
-    <a href="https://github.com/mano877" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
-      github.com/mano877
-    </a>
-  </div>
-  <div className="flex items-center gap-2">
-    <FiLinkedin className="w-4 h-4" />
-    <a
-      href="https://www.linkedin.com/in/eman-bashir-48b9392a7/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:text-accent transition"
-    >
-      linkedin.com/in/eman-bashir
-    </a>
-  </div>
-</div>
-
-      {/* CTA */}
-      <a
-        href="mailto:emanbashir302@gmail.com"
-        className="inline-block px-8 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition"
-      >
-        Get In Touch
-      </a>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-14 text-sm text-muted">
+          {highlights.map(({ icon: Icon, label }) => (
+            <span key={label} className="inline-flex items-center gap-2">
+              <Icon className="w-4 h-4 text-accent" />
+              {label}
+            </span>
+          ))}
+        </div>
+      </Reveal>
     </section>
   );
 }

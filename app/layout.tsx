@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eman — AI Solutions, Automation & Web Development",
+  title: "Eman | AI Solutions, Automation & Web Development",
   description:
     "Web experiences, AI solutions, and automation built around the way businesses actually work.",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Full-Stack Developer",
   ],
   openGraph: {
-    title: "Eman — AI Solutions, Automation & Web Development",
+    title: "Eman | AI Solutions, Automation & Web Development",
     description:
       "Web experiences, AI solutions, and automation built around the way businesses actually work.",
     type: "website",

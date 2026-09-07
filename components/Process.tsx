@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Search, PenTool, Code2, Rocket, Sparkles, ArrowRight } from "lucide-react";
 
 const steps = [
@@ -43,24 +46,43 @@ function ProcessConnector() {
 }
 
 export default function Process() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <section id="process" className="text-foreground px-6 py-24">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">The Process</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">The Process</h2>
+      <p className="text-muted text-center mb-12 max-w-md mx-auto text-sm">
+        Tap a step to see how it works.
+      </p>
 
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-4 gap-6 relative">
           {steps.map((s, i) => {
             const Icon = s.icon;
+            const isOpen = openIndex === i;
             return (
               <div key={s.number} className="relative">
-                <div className="border border-border bg-card rounded-xl p-6 h-full">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className={`w-full text-left border rounded-xl p-6 h-full transition-colors ${
+                    isOpen ? "border-accent/40 bg-card" : "border-border bg-card hover:border-accent/30"
+                  }`}
+                >
                   <div className="flex items-start justify-between mb-4">
                     <span className="text-accent font-mono text-sm">{s.number}</span>
                     <Icon className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-                  <p className="text-sm text-muted">{s.description}</p>
-                </div>
+                  <h3 className="font-semibold text-lg">{s.title}</h3>
+                  <div
+                    className={`grid transition-all duration-300 ease-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <p className="text-sm text-muted overflow-hidden">{s.description}</p>
+                  </div>
+                </button>
                 {i < steps.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-6 w-6 -translate-y-1/2 z-10">
                     <svg width="24" height="8" viewBox="0 0 24 8">

@@ -60,7 +60,7 @@ export const services: Service[] = [
     title: "AI Solutions",
     shortDescription:
       "Practical AI systems that make information, customer support and business processes easier to manage.",
-    positioning: "AI that actually answers the question — and knows when to hand off to a person.",
+    positioning: "AI that actually answers the question and knows when to hand off to a person.",
     whoItsFor: [
       "E-commerce and service businesses with high customer inquiry volume",
       "Companies with large documentation, policies, or internal knowledge",
@@ -118,7 +118,7 @@ export const services: Service[] = [
     caseStudy: {
       project: "RestoBot",
       description:
-        "Restaurant ordering workflow automated through an AI chatbot — from menu understanding to order creation, modification, cancellation, and billing.",
+        "Restaurant ordering workflow automated through an AI chatbot, from menu understanding to order creation, modification, cancellation, and billing.",
       href: "/projects/restobot",
     },
   },

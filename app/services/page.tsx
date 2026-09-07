@@ -16,9 +16,9 @@ import Reveal from "@/components/Reveal";
 import { services, type Service } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Services — Eman",
+  title: "Services | Eman",
   description:
-    "Web Development, AI Solutions, and Automation & Integration — practical technology built around real business problems.",
+    "Web Development, AI Solutions, and Automation & Integration: practical technology built around real business problems.",
 };
 
 const ICONS = {
@@ -150,7 +150,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
           <Reveal>
             <div className="border border-accent/20 bg-accent/5 rounded-xl p-6 mb-10">
               <h3 className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">
-                Case Study — {service.caseStudy.project}
+                Case Study: {service.caseStudy.project}
               </h3>
               <p className="text-foreground/80 leading-relaxed text-sm mb-4">{service.caseStudy.description}</p>
               <Link
@@ -199,7 +199,7 @@ export default function ServicesPage() {
               Turning business challenges into intelligent digital solutions.
             </h1>
             <p className="mt-6 text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-              Web experiences, AI systems, and automation working together — practical
+              Web experiences, AI systems, and automation working together: practical
               technology that simplifies workflows, solves real problems, and creates
               measurable value.
             </p>
@@ -224,7 +224,7 @@ export default function ServicesPage() {
             <Reveal>
               <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Technical Expertise</h2>
               <p className="text-muted text-center mb-12 max-w-xl mx-auto">
-                The technology behind the solutions — beyond the three services above.
+                The technology behind the solutions, beyond the three services above.
               </p>
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

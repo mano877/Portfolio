@@ -1,7 +1,7 @@
 import type { Project } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
-import { ChefHat, Stethoscope, ListChecks, Headset, Check, ArrowRight } from "lucide-react";
+import { ChefHat, Stethoscope, ListChecks, Headset, ArrowRight } from "lucide-react";
 
 const ICONS = {
   restobot: ChefHat,
@@ -10,60 +10,65 @@ const ICONS = {
   "customer-care": Headset,
 } as const;
 
-const MAX_VISIBLE_FEATURES = 4;
+const MAX_TAGS = 4;
 
 export function ProjectCard({ project }: { project: Project }) {
   const Icon = ICONS[project.emoji];
   const fit = project.cardImageFit ?? "cover";
-  const visibleFeatures = project.features.slice(0, MAX_VISIBLE_FEATURES);
-  const remaining = project.features.length - visibleFeatures.length;
+  const tags = (project.builtWith ?? project.features).slice(0, MAX_TAGS);
 
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group flex flex-col h-full rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/[0.08]"
+      className="group flex flex-col h-full rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/[0.08] hover:-translate-y-1"
     >
       <div className={`relative shrink-0 aspect-video overflow-hidden ${fit === "contain" ? "bg-card" : ""}`}>
-        <Image
-          src={`/projects/${project.slug}/${project.image}`}
-          alt={project.title}
-          fill
-          sizes="(min-width: 768px) 50vw, 100vw"
-          className={`transition-transform duration-500 group-hover:scale-[1.02] ${
-            fit === "contain" ? "object-contain" : "object-cover object-center"
-          }`}
-        />
+        {project.image ? (
+          <Image
+            src={`/projects/${project.slug}/${project.image}`}
+            alt={project.title}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+              fit === "contain" ? "object-contain" : "object-cover object-center"
+            }`}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-accent/5">
+            <Icon className="w-12 h-12 text-accent/30" />
+          </div>
+        )}
+
+        <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/90 backdrop-blur border border-border text-xs font-medium text-accent uppercase tracking-wide">
+            <Icon className="w-3.5 h-3.5" />
+            {project.category}
+          </span>
+        </div>
       </div>
 
       <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-2 mb-3 flex-wrap">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
-            <Icon className="w-4 h-4 text-accent" />
-          </div>
-          <span className="text-xs font-medium text-accent uppercase tracking-wide">
-            {project.category}
+        {project.secondaryCapability && (
+          <span className="mb-2 w-fit px-2.5 py-1 rounded-full border border-border bg-background text-xs text-muted">
+            {project.secondaryCapability}
           </span>
-          {project.secondaryCapability && (
-            <span className="px-2.5 py-1 rounded-full border border-border bg-background text-xs text-muted">
-              {project.secondaryCapability}
-            </span>
-          )}
-        </div>
+        )}
 
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-sm text-foreground/70 mb-4">{project.outcome}</p>
+        <p className="text-sm text-foreground/70 mb-5">{project.outcome}</p>
 
-        <ul className="space-y-1.5 text-sm text-foreground/80 mb-4">
-          {visibleFeatures.map((f) => (
-            <li key={f} className="flex items-start gap-2">
-              <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-              <span className="line-clamp-1">{f}</span>
-            </li>
+        <div className="mt-auto flex flex-wrap gap-1.5 mb-5">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="px-2.5 py-1 rounded-full border border-border bg-background text-xs text-muted"
+            >
+              {t}
+            </span>
           ))}
-          {remaining > 0 && <li className="text-xs text-muted pl-6">+{remaining} more</li>}
-        </ul>
+        </div>
 
-        <span className="mt-auto inline-flex items-center gap-1.5 text-sm text-foreground/70 group-hover:text-accent transition-colors w-fit">
+        <span className="inline-flex items-center gap-1.5 text-sm text-foreground/70 group-hover:text-accent transition-colors w-fit">
           View Details
           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
         </span>
