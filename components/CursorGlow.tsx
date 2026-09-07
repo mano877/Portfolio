@@ -23,7 +23,7 @@ export default function CursorGlow() {
   return (
     <motion.div
       style={{ x: springX, y: springY, opacity: visible ? 1 : 0 }}
-      className="pointer-events-none fixed left-0 top-0 z-40 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3EB8A9]/10 blur-3xl transition-opacity duration-300"
+      className="pointer-events-none fixed left-0 top-0 z-40 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.06] blur-3xl transition-opacity duration-300"
     />
   );
 }

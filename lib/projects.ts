@@ -1,14 +1,22 @@
+export type FilterCategory = "Web Development" | "AI" | "Automation";
+
 export type Project = {
   slug: string;
   emoji: "restobot" | "dr-aria" | "task-manager" | "customer-care";
   category: string;
   secondaryCapability?: string;
+  filterCategories: FilterCategory[];
   title: string;
   outcome: string;
   image: string;
   cardImageFit?: "cover" | "contain";
   features: string[];
   architecture?: string[];
+  builtWith?: string[];
+  problem?: string;
+  idea?: string;
+  solution?: string;
+  resultPurpose?: string;
   lessonsLearned?: string;
   screenshots?: string[];
 };
@@ -19,6 +27,7 @@ export const projects: Project[] = [
     emoji: "restobot",
     category: "AI Knowledge Base / RAG",
     secondaryCapability: "Business Automation",
+    filterCategories: ["AI", "Automation"],
     title: "Restaurant AI Assistant",
     outcome:"Turns a simple conversation into a complete ordering experience. No menus, no hassle.",
     image: "signup.png",
@@ -37,6 +46,15 @@ export const projects: Project[] = [
       "JWT-based auth separating admin and customer permissions",
       "LLM parses natural-language orders into structured line items before hitting the database",
     ],
+    builtWith: ["FastAPI", "PostgreSQL", "Pinecone (RAG)", "JWT Auth"],
+    problem:
+      "Restaurants running phone-in or in-person ordering deal with mistakes, slow turnaround, and staff tied up taking repetitive orders instead of running the kitchen.",
+    idea:
+      "Let customers order the way they'd normally ask a person — in plain language — and have the system understand menu items, quantities, and changes on its own.",
+    solution:
+      "A conversational ordering assistant that uses the restaurant's own menu as a knowledge source, parses natural-language requests into structured orders, and separates admin and customer permissions so staff and diners each see what they need.",
+    resultPurpose:
+      "Lets a restaurant take orders through conversation instead of a static menu form, while still producing clean, billable line items and GST-ready invoices behind the scenes.",
     lessonsLearned:
       "The hardest part wasn't the AI. It was reliably turning free-form chat orders into structured, billable line items without losing accuracy. Getting role-based access right (admin vs customer) also required rethinking the auth flow more carefully than a typical CRUD API.",
     screenshots: [
@@ -54,6 +72,7 @@ export const projects: Project[] = [
     emoji: "dr-aria",
     category: "AI Knowledge Base / RAG",
     secondaryCapability: "AI Insights",
+    filterCategories: ["AI"],
     title: "AI Medical Document Assistant (Dr. Aria)",
     outcome: "Turns complex medical documents into an assistant that answers questions in plain language.",
     image: "signup.png",
@@ -71,6 +90,15 @@ export const projects: Project[] = [
       "PostgreSQL to persist multi-turn conversation history per user",
       "JWT authentication to keep patient conversations isolated per account",
     ],
+    builtWith: ["FastAPI", "PostgreSQL", "Pinecone (RAG)", "Groq LLM"],
+    problem:
+      "Medical information is often written for clinicians, not patients — long documents, dense terminology, and no easy way to ask a follow-up question.",
+    idea:
+      "Give people a conversational way to work through their own medical documents and get plain-language answers, without losing the thread across a longer conversation.",
+    solution:
+      "An AI assistant built on a retrieval pipeline over uploaded documents, with persistent multi-conversation history and features for summarizing, tracking symptoms, and getting a second opinion on demand.",
+    resultPurpose:
+      "Turns a folder of medical documents into something a patient can actually have a conversation with — ask a question, get a grounded answer, come back to it later.",
     lessonsLearned:
       "Maintaining coherent multi-turn context across a conversation without re-sending the entire history to the LLM every time was the biggest architectural challenge. It pushed me to think carefully about what context actually needs to persist versus what can be re-retrieved from the vector store on demand.",
     screenshots: [
@@ -83,14 +111,15 @@ export const projects: Project[] = [
   "/projects/dr-aria/signup.png",
   "/projects/dr-aria/upload-doc.png",
 ],
-  
+
     },
-  
+
     {
   slug: "task-manager",
   emoji: "task-manager",
   category: "Workspace & Task Automation",
   secondaryCapability: "Productivity Automation",
+  filterCategories: ["Web Development", "Automation"],
   title: "AI Task Management System",
   outcome: "Brings tasks, projects, AI chat, and deadline reminders together in one workspace.",
   image: "landing.png",
@@ -109,6 +138,15 @@ export const projects: Project[] = [
     "Rate limiting (SlowAPI) on auth/chat endpoints, an hourly background job for deadline reminders, and an instant LLM-free welcome banner backed by the same summary endpoint",
     "React SPA talks to the API over a typed Axios client, with light/dark/system theme settings and profile pages",
   ],
+  builtWith: ["React", "FastAPI", "PostgreSQL", "LangChain + Ollama", "Redis", "Docker"],
+  problem:
+    "Personal task tracking and project-based work tend to live in separate tools, and the busywork of chasing deadlines usually falls on the person, not the system.",
+  idea:
+    "Combine personal tasks and project-scoped tasks in one workspace, then let an assistant that actually knows the current workload answer questions instead of making someone check manually.",
+  solution:
+    "A full-stack task and project workspace with its own dashboard and analytics, an AI chat assistant fed a live summary of what's overdue, due today, or high priority, and a background job that handles deadline reminders automatically.",
+  resultPurpose:
+    "Replaces manual status-checking with a workspace that already knows what's due, what's overdue, and what needs attention next.",
   lessonsLearned:
     "Modeling standalone vs. project-scoped tasks in one table (nullable project_id) avoided duplicating CRUD logic, while My Tasks stayed a fully separate table since its shape never overlapped with project tasks. A dedicated /chat/summary endpoint let the frontend render an instant welcome banner without waiting on an LLM round trip, feeding the same summary data into the chat context. Soft-delete and archive as two distinct states made an accidental-delete recovery flow possible without extra tables, and designing Redis caching to fail open meant the API never went down because of an unrelated dependency.",
   screenshots: [
@@ -118,9 +156,9 @@ export const projects: Project[] = [
     "/projects/task-manager/dashboard.png",
     "/projects/task-manager/chat.png",
     "/projects/task-manager/my-tasks.png",
-    "/projects/task-manager/new-task.png", 
+    "/projects/task-manager/new-task.png",
     "/projects/task-manager/projects.png",
-    "/projects/task-manager/analytics.png", 
+    "/projects/task-manager/analytics.png",
     "/projects/task-manager/settings.png",
   ],
 },
@@ -130,6 +168,7 @@ export const projects: Project[] = [
     emoji: "customer-care",
     category: "AI Customer Support",
     secondaryCapability: "Business Automation",
+    filterCategories: ["AI", "Automation"],
     title: "AI Customer Care Platform",
     outcome:
       "Turns a support inbox into an AI-first workflow. The bot resolves what it can, hands off to a human the moment it can't.",
@@ -149,6 +188,15 @@ export const projects: Project[] = [
       "React + TypeScript frontend with a single API layer and TanStack Query, rendering two distinct experiences (customer self-service vs. agent/admin console) off one role field in the JWT",
       "Dashboard and analytics computed live from real paginated list endpoints rather than a canned stats endpoint, so every number on screen is traceable back to an actual API call",
     ],
+    builtWith: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Groq LLM", "JWT Auth"],
+    problem:
+      "Support inboxes fill up with the same handful of questions, while the ones that actually need a person get buried in the queue.",
+    idea:
+      "Let AI resolve what it reasonably can — orders, tickets, common questions — and route everything else to a human, instead of forcing every conversation through the same slow path.",
+    solution:
+      "A support platform with a role-aware customer portal and agent console, a chat pipeline that classifies intent before deciding whether to answer or escalate, and a ticket queue for the cases that need a person.",
+    resultPurpose:
+      "Gives a support team a system that filters and resolves routine requests on its own, so agent time goes to the conversations that actually need it.",
     lessonsLearned:
       "The backend was already built when I started on the frontend, and reading its contracts closely mattered more than I expected — it had customer-scoped endpoints (\"my orders\", \"my tickets\") but no admin lookup by customer id, which meant the agent console had to be designed around what the API could actually prove rather than what a typical support dashboard would want to show. I also hit two migration bugs that only surfaced against real Postgres (boolean defaults written as SQLite-style 0/1, and Alembic's version-tracking column being too narrow for this project's revision ids) — a good reminder that a green test suite against SQLite doesn't guarantee the same schema works on the database you'll actually deploy to.",
     screenshots: [
@@ -167,7 +215,7 @@ export const projects: Project[] = [
   },
 
     ]
-  
+
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);

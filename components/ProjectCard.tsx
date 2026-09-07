@@ -21,9 +21,9 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group flex flex-col h-full rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_30px_-12px_rgba(62,184,169,0.35)]"
+      className="group flex flex-col h-full rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/[0.08]"
     >
-      <div className={`relative shrink-0 aspect-video overflow-hidden ${fit === "contain" ? "bg-[#050505]" : ""}`}>
+      <div className={`relative shrink-0 aspect-video overflow-hidden ${fit === "contain" ? "bg-card" : ""}`}>
         <Image
           src={`/projects/${project.slug}/${project.image}`}
           alt={project.title}
@@ -44,26 +44,26 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.category}
           </span>
           {project.secondaryCapability && (
-            <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300">
+            <span className="px-2.5 py-1 rounded-full border border-border bg-background text-xs text-muted">
               {project.secondaryCapability}
             </span>
           )}
         </div>
 
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-sm text-white/70 mb-4">{project.outcome}</p>
+        <p className="text-sm text-foreground/70 mb-4">{project.outcome}</p>
 
-        <ul className="space-y-1.5 text-sm text-white/80 mb-4">
+        <ul className="space-y-1.5 text-sm text-foreground/80 mb-4">
           {visibleFeatures.map((f) => (
             <li key={f} className="flex items-start gap-2">
               <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
               <span className="line-clamp-1">{f}</span>
             </li>
           ))}
-          {remaining > 0 && <li className="text-xs text-white/40 pl-6">+{remaining} more</li>}
+          {remaining > 0 && <li className="text-xs text-muted pl-6">+{remaining} more</li>}
         </ul>
 
-        <span className="mt-auto inline-flex items-center gap-1.5 text-sm text-white/70 group-hover:text-accent transition-colors w-fit">
+        <span className="mt-auto inline-flex items-center gap-1.5 text-sm text-foreground/70 group-hover:text-accent transition-colors w-fit">
           View Details
           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
         </span>

@@ -27,24 +27,24 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-black/40 border-b border-white/10">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-center gap-x-4 gap-y-2 flex-wrap text-sm text-gray-300 relative">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-background/80 border-b border-border">
+      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-center gap-x-4 gap-y-2 flex-wrap text-sm text-muted relative">
         {links.map((link, i) => (
           <span key={link.id} className="flex items-center gap-4">
             {link.href ? (
-              <Link href={link.href} className="text-gray-400 hover:text-[#3EB8A9] transition-colors">
+              <Link href={link.href} className="text-muted hover:text-accent transition-colors">
                 {link.label}
               </Link>
             ) : isHome ? (
-              <button onClick={() => scrollTo(link.id)} className="text-gray-400 hover:text-[#3EB8A9] transition-colors">
+              <button onClick={() => scrollTo(link.id)} className="text-muted hover:text-accent transition-colors">
                 {link.label}
               </button>
             ) : (
-              <Link href={link.id === "top" ? "/" : `/#${link.id}`} className="text-gray-400 hover:text-[#3EB8A9] transition-colors">
+              <Link href={link.id === "top" ? "/" : `/#${link.id}`} className="text-muted hover:text-accent transition-colors">
                 {link.label}
               </Link>
             )}
-            {i < links.length - 1 && <span className="text-gray-600">·</span>}
+            {i < links.length - 1 && <span className="text-border">·</span>}
           </span>
         ))}
 
@@ -54,7 +54,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-gray-400 hover:text-[#3EB8A9] transition-colors"
+            className="text-muted hover:text-accent transition-colors"
           >
             <FiLinkedin className="w-[18px] h-[18px]" />
           </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="text-gray-400 hover:text-[#3EB8A9] transition-colors"
+            className="text-muted hover:text-accent transition-colors"
           >
             <FiGithub className="w-[18px] h-[18px]" />
           </a>

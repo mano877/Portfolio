@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  MessageSquare,
-  Database,
+  Code2,
+  Bot,
   LayoutDashboard,
   CircleCheck,
   ArrowRight,
@@ -18,13 +18,13 @@ import { services, type Service } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services — Eman",
   description:
-    "AI Customer Support Chatbots, AI Knowledge Base / RAG Chatbots, and AI Dashboard & Automation — practical AI systems built to solve real business problems.",
+    "Web Development, AI Solutions, and Automation & Integration — practical technology built around real business problems.",
 };
 
 const ICONS = {
-  chatbot: MessageSquare,
-  "knowledge-base": Database,
-  "dashboard-automation": LayoutDashboard,
+  "web-development": Code2,
+  "ai-solutions": Bot,
+  "automation-integration": LayoutDashboard,
 } as const;
 
 const CONSULTATION_PHONE = "923124467526";
@@ -60,7 +60,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-2.5 text-sm text-gray-300">
+        <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80">
           <span className="mt-[7px] w-1 h-1 rounded-full bg-accent shrink-0" />
           {item}
         </li>
@@ -73,7 +73,7 @@ function FeatureList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-2">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-2 text-sm text-gray-300">
+        <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
           <CircleCheck className="w-4 h-4 text-accent shrink-0 mt-0.5" />
           {item}
         </li>
@@ -88,7 +88,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
   return (
     <section
       id={service.slug}
-      className={`scroll-mt-28 py-16 ${!isLast ? "border-b border-white/10" : ""}`}
+      className={`scroll-mt-28 py-16 ${!isLast ? "border-b border-border" : ""}`}
     >
       <div className="max-w-5xl mx-auto px-6">
         <Reveal>
@@ -97,7 +97,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
           </div>
           <div className="flex items-baseline gap-3 mb-2">
             <span className="text-accent font-mono text-sm">{service.number}</span>
-            <span className="text-xs uppercase tracking-widest text-gray-500">Service</span>
+            <span className="text-xs uppercase tracking-widest text-muted">Service</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold mb-3">{service.title}</h2>
           <p className="text-accent text-lg font-medium mb-10">{service.positioning}</p>
@@ -105,32 +105,32 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
 
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-10 mb-10">
           <Reveal>
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
+            <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">
               Who It&apos;s For
             </h3>
             <BulletList items={service.whoItsFor} />
           </Reveal>
           <Reveal delay={0.05}>
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
+            <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">
               Problems It Solves
             </h3>
             <BulletList items={service.problems} />
           </Reveal>
           <Reveal delay={0.1}>
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
-              What I Build
+            <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">
+              What Gets Built
             </h3>
             <FeatureList items={service.features} />
           </Reveal>
           <Reveal delay={0.15}>
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
+            <h3 className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">
               Technology
             </h3>
             <div className="flex flex-wrap gap-2">
               {service.technology.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300"
+                  className="px-3 py-1 rounded-full border border-border bg-card text-xs text-muted"
                 >
                   {t}
                 </span>
@@ -142,7 +142,7 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
         <Reveal>
           <div className="border border-accent/20 bg-accent/5 rounded-xl p-6 mb-10">
             <h3 className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Example</h3>
-            <p className="text-gray-300 leading-relaxed text-sm">{service.example}</p>
+            <p className="text-foreground/80 leading-relaxed text-sm">{service.example}</p>
           </div>
         </Reveal>
 
@@ -152,10 +152,10 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
               <h3 className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">
                 Case Study — {service.caseStudy.project}
               </h3>
-              <p className="text-gray-300 leading-relaxed text-sm mb-4">{service.caseStudy.description}</p>
+              <p className="text-foreground/80 leading-relaxed text-sm mb-4">{service.caseStudy.description}</p>
               <Link
                 href={service.caseStudy.href}
-                className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-accent transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm text-foreground/70 hover:text-accent transition-colors"
               >
                 View Case Study
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -165,10 +165,10 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
         )}
 
         <Reveal>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-border pt-8">
             <div>
               <p className="text-2xl font-semibold">{service.StartingPrice}</p>
-              <p className="text-xs text-gray-500 mt-1 max-w-sm">
+              <p className="text-xs text-muted mt-1 max-w-sm">
                 Final pricing depends on features, integrations, complexity, and project requirements.
               </p>
             </div>
@@ -176,9 +176,9 @@ function ServiceSection({ service, isLast }: { service: Service; isLast: boolean
               href={whatsappLink(`Hi, I'd like to book a consultation about the ${service.title} service.`)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition w-fit"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition w-fit"
             >
-              Book a Free 30-Minute Consultation
+              Book a Free Consultation
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -192,15 +192,16 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <main className="text-white">
+      <main className="text-foreground">
         <section className="pt-40 pb-20 px-6 text-center">
           <Reveal>
             <h1 className="text-3xl md:text-5xl font-bold max-w-3xl mx-auto">
               Turning business challenges into intelligent digital solutions.
             </h1>
-            <p className="mt-6 text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              From AI applications and automation to scalable backend systems, I build practical
-              technology that simplifies workflows, solves problems, and creates measurable value.
+            <p className="mt-6 text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+              Web experiences, AI systems, and automation working together — practical
+              technology that simplifies workflows, solves real problems, and creates
+              measurable value.
             </p>
           </Reveal>
         </section>
@@ -211,7 +212,7 @@ export default function ServicesPage() {
 
         <div className="px-6 pb-4">
           <Reveal>
-            <p className="text-xs text-gray-500 text-center max-w-2xl mx-auto">
+            <p className="text-xs text-muted text-center max-w-2xl mx-auto">
               Third-party services such as AI model APIs, hosting, vector databases, and other
               infrastructure are typically billed separately based on usage.
             </p>
@@ -222,19 +223,19 @@ export default function ServicesPage() {
           <div className="max-w-5xl mx-auto">
             <Reveal>
               <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Technical Expertise</h2>
-              <p className="text-gray-400 text-center mb-12 max-w-xl mx-auto">
+              <p className="text-muted text-center mb-12 max-w-xl mx-auto">
                 The technology behind the solutions — beyond the three services above.
               </p>
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {expertise.map(({ title, icon: Icon, items }, i) => (
                 <Reveal key={title} delay={i * 0.08}>
-                  <div className="h-full border border-white/10 bg-white/5 backdrop-blur rounded-xl p-6">
+                  <div className="h-full border border-border bg-card rounded-xl p-6">
                     <Icon className="w-5 h-5 text-accent mb-3" />
                     <h3 className="font-semibold mb-3">{title}</h3>
                     <ul className="space-y-1.5">
                       {items.map((item) => (
-                        <li key={item} className="text-sm text-gray-400">
+                        <li key={item} className="text-sm text-muted">
                           {item}
                         </li>
                       ))}
@@ -246,11 +247,12 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-24 text-center border-t border-white/10">
+        <section className="px-6 py-24 text-center border-t border-border">
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Have a problem worth solving?</h2>
-            <p className="text-gray-400 mb-10 max-w-xl mx-auto">
-              Tell me what you&apos;re trying to build, and let&apos;s figure out the right solution.
+            <p className="text-muted mb-10 max-w-xl mx-auto">
+              Whatever the next step looks like, it starts with understanding what needs to
+              work better.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
@@ -259,16 +261,16 @@ export default function ServicesPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition"
               >
-                Book a Free 30-Minute Consultation
+                Book a Free Consultation
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link
                 href="/#work"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-lg font-medium hover:bg-white/10 transition"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/15 rounded-lg font-medium hover:bg-foreground/5 transition-colors"
               >
-                View My Work
+                Explore the Work
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

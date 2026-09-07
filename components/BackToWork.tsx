@@ -12,7 +12,7 @@ export default function BackToWork() {
         sessionStorage.setItem("scrollTarget", "work");
         router.push("/");
       }}
-      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-accent transition-colors"
+      className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
     >
       <ArrowLeft className="w-3.5 h-3.5" />
       Back to work
