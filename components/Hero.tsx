@@ -60,12 +60,10 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
           className="flex flex-wrap justify-center items-center gap-3 mt-9"
         >
-          {pillars.map(({ icon: Icon, label }, i) => (
+          {pillars.map(({ icon: Icon, label }) => (
             <span
               key={label}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground/80 shadow-sm ${
-                i % 2 === 1 ? "sm:-translate-y-1.5" : ""
-              }`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground/80 shadow-sm"
             >
               <Icon className="w-3.5 h-3.5 text-accent" />
               {label}
