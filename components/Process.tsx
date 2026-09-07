@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, PenTool, Code2, Rocket, Sparkles, ArrowRight } from "lucide-react";
+import { Search, PenTool, Code2, Rocket, Sparkles, ArrowRight, ChevronDown } from "lucide-react";
 
 const steps = [
   { number: "01", title: "Discover", description: "Understand the business, users, goals and actual problem.", icon: Search },
@@ -74,7 +74,14 @@ export default function Process() {
                     <span className="text-accent font-mono text-sm">{s.number}</span>
                     <Icon className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="font-semibold text-lg">{s.title}</h3>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="font-semibold text-lg">{s.title}</h3>
+                    <ChevronDown
+                      className={`w-4 h-4 text-muted shrink-0 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
                   <div
                     className={`grid transition-all duration-300 ease-out ${
                       isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"
