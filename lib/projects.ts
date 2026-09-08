@@ -163,7 +163,7 @@ export const projects: Project[] = [
   "/projects/dr-aria/signup.png",
   "/projects/dr-aria/upload-doc.png",
 ],
-
+    liveUrl: "https://medical-chatbot-frontend-rpoc-git-main-eman-fd69.vercel.app/",
     },
 
     {
