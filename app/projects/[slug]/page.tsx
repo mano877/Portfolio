@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
-import { ChefHat, Stethoscope, ListChecks, Headset } from "lucide-react";
+import { ChefHat, Stethoscope, ListChecks, Headset, Sofa, ArrowUpRight } from "lucide-react";
 import BackToProjects from "@/components/BackToWork";
 
 const emoji = {
@@ -10,6 +10,7 @@ const emoji = {
   "dr-aria": Stethoscope,
   "task-manager": ListChecks,
   "customer-care": Headset,
+  "longlife-furnishers": Sofa,
 } as const;
 
 export function generateStaticParams() {
@@ -51,6 +52,20 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           )}
         </Reveal>
+
+        {project.liveUrl && (
+          <Reveal delay={0.03}>
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition mb-10 w-fit"
+            >
+              Visit Live Site
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </Reveal>
+        )}
 
         {project.problem && (
           <Reveal delay={0.05}>
@@ -102,11 +117,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <section className="mb-12">
               <h2 className="text-xl font-semibold mb-4">Screenshots</h2>
               <div className="grid sm:grid-cols-2 gap-4">
-                {project.screenshots.map((src) => (
-                  <div key={src} className="relative aspect-video rounded-lg overflow-hidden border border-border">
-                    <Image src={src} alt={project.title} fill className="object-cover" />
-                  </div>
-                ))}
+                {project.screenshots.map((src, i) => {
+                  const caption = project.screenshotCaptions?.[i];
+                  return (
+                    <figure key={src}>
+                      <div className="relative aspect-video rounded-lg overflow-hidden border border-border">
+                        <Image src={src} alt={caption ?? project.title} fill className="object-cover" />
+                      </div>
+                      {caption && (
+                        <figcaption className="mt-2 text-xs text-muted leading-relaxed">{caption}</figcaption>
+                      )}
+                    </figure>
+                  );
+                })}
               </div>
             </section>
           </Reveal>

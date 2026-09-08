@@ -2,7 +2,7 @@ export type FilterCategory = "Web Development" | "AI" | "Automation";
 
 export type Project = {
   slug: string;
-  emoji: "restobot" | "dr-aria" | "task-manager" | "customer-care";
+  emoji: "restobot" | "dr-aria" | "task-manager" | "customer-care" | "longlife-furnishers";
   category: string;
   secondaryCapability?: string;
   filterCategories: FilterCategory[];
@@ -10,8 +10,11 @@ export type Project = {
   outcome: string;
   image?: string;
   cardImageFit?: "cover" | "contain";
+  /** Short chips shown on the project card. Falls back to builtWith, then features, if not set. */
+  tags?: string[];
   features: string[];
   architecture?: string[];
+  /** Confirmed technologies only, shown in the detail page's "Built With" section. */
   builtWith?: string[];
   problem?: string;
   idea?: string;
@@ -19,9 +22,58 @@ export type Project = {
   resultPurpose?: string;
   lessonsLearned?: string;
   screenshots?: string[];
+  /** Optional captions shown under each screenshot, index-aligned with `screenshots`. */
+  screenshotCaptions?: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "longlife-furnishers",
+    emoji: "longlife-furnishers",
+    category: "Website Design & Development",
+    filterCategories: ["Web Development"],
+    image: "homepage-hero.jpg",
+    tags: ["WordPress", "Responsive Design", "WhatsApp Enquiries", "Product Showcase"],
+    title: "Longlife Furnishers",
+    outcome:
+      "A fully functional furniture website designed to showcase products and make customer enquiries easier through WhatsApp.",
+    builtWith: ["WordPress", "Elementor"],
+    features: [
+      "Responsive furniture/product website",
+      "Product presentation",
+      "WhatsApp enquiry flow",
+      "Business/payment information",
+      "Interactive calls-to-action",
+      "Custom animations and transitions",
+      "Responsive behavior across screen sizes",
+      "Customized WordPress experience",
+    ],
+    problem:
+      "Longlife Furnishers needed a professional web presence to present its furniture products clearly and give potential customers a convenient way to make enquiries.",
+    idea:
+      "Create a responsive furniture website that makes the products easy to explore while keeping the path from browsing to enquiry simple.",
+    solution:
+      "Customized an existing WordPress theme into a fully functional business website, including product presentation, responsive layouts, WhatsApp enquiry functionality, bank-transfer/payment information, interactive buttons, and custom animations.",
+    resultPurpose:
+      "A responsive, fully functional furniture website with product presentation, direct WhatsApp enquiries, business information, and interactive elements.",
+    lessonsLearned:
+      "Working within an existing WordPress theme meant customizing the experience without fighting the underlying structure: adjusting layouts, adding WhatsApp and payment details, and layering in animation and interaction so the site felt considered rather than templated.",
+    screenshots: [
+      "/projects/longlife-furnishers/homepage-hero.jpg",
+      "/projects/longlife-furnishers/special-offers.jpg",
+      "/projects/longlife-furnishers/mobile-hero.png",
+      "/projects/longlife-furnishers/categories.jpg",
+    ],
+    screenshotCaptions: [
+      "Customized the homepage experience with clear product navigation, prominent calls to action, and a polished furniture-focused layout.",
+      "Customized the product presentation to make featured and promotional furniture easier to browse and compare.",
+      "Implemented and verified responsive behavior so the navigation, layout, and customer enquiry CTA adapt cleanly to mobile screens.",
+      "Customized the category experience to help visitors explore furniture by room type.",
+    ],
+    liveUrl: "https://longlife.bizfatt.com/",
+  },
   {
     slug: "restobot",
     emoji: "restobot",

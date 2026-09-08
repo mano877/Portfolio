@@ -1,13 +1,16 @@
+"use client";
+
 import type { Project } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
-import { ChefHat, Stethoscope, ListChecks, Headset, ArrowRight } from "lucide-react";
+import { ChefHat, Stethoscope, ListChecks, Headset, Sofa, ArrowRight, ArrowUpRight } from "lucide-react";
 
 const ICONS = {
   restobot: ChefHat,
   "dr-aria": Stethoscope,
   "task-manager": ListChecks,
   "customer-care": Headset,
+  "longlife-furnishers": Sofa,
 } as const;
 
 const MAX_TAGS = 4;
@@ -15,7 +18,7 @@ const MAX_TAGS = 4;
 export function ProjectCard({ project }: { project: Project }) {
   const Icon = ICONS[project.emoji];
   const fit = project.cardImageFit ?? "cover";
-  const tags = (project.builtWith ?? project.features).slice(0, MAX_TAGS);
+  const tags = (project.tags ?? project.builtWith ?? project.features).slice(0, MAX_TAGS);
 
   return (
     <Link
@@ -68,10 +71,27 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <span className="inline-flex items-center gap-1.5 text-sm text-foreground/70 group-hover:text-accent transition-colors w-fit">
-          View Details
-          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-        </span>
+        <div className="flex items-center gap-4 flex-wrap">
+          <span className="inline-flex items-center gap-1.5 text-sm text-foreground/70 group-hover:text-accent transition-colors w-fit">
+            View Details
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+          </span>
+
+          {project.liveUrl && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+              }}
+              className="inline-flex items-center gap-1.5 text-sm text-foreground/70 hover:text-accent transition-colors w-fit"
+            >
+              View Live Site
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
       </div>
     </Link>
   );
