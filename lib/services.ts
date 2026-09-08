@@ -51,7 +51,7 @@ export const services: Service[] = [
     example:
       "A business is relying on an outdated site that doesn't represent what it actually offers. A redesigned, responsive website reorganizes the content around what visitors are looking for, with a clear path to get in touch.",
     technology: ["React", "Next.js", "FastAPI", "PostgreSQL", "REST APIs", "Docker"],
-    StartingPrice: "From $300",
+    StartingPrice: "Starting from $300",
   },
   {
     slug: "ai-solutions",
@@ -84,7 +84,7 @@ export const services: Service[] = [
     example:
       "A customer asks about an order, a policy, or a product. The assistant retrieves the relevant answer from real documentation or business data and responds directly, handing the conversation to a person only when it genuinely needs one.",
     technology: ["LLMs", "RAG", "Embeddings", "Vector Databases", "FastAPI", "PostgreSQL", "Docker"],
-    StartingPrice: "From $400",
+    StartingPrice: "Starting from $500",
   },
   {
     slug: "automation-integration",
@@ -114,7 +114,7 @@ export const services: Service[] = [
     example:
       "Instead of manually checking records, updating data, generating reports, and sending notifications: Data → Automation → Dashboard → Action.",
     technology: ["React", "FastAPI", "PostgreSQL", "REST APIs", "Background Tasks", "Docker"],
-    StartingPrice: "From $1000",
+    StartingPrice: "Starting from $1,000",
     caseStudy: {
       project: "RestoBot",
       description:

@@ -15,8 +15,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
         <Work />
+        <Services />
         <ScrollHandler />
         <About />
         <Process />

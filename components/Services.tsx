@@ -50,8 +50,7 @@ export default function Services() {
                   ))}
                 </div>
 
-                <div className="mt-auto flex items-center justify-between pt-5 border-t border-border">
-                  <span className="text-sm font-semibold">{service.StartingPrice}</span>
+                <div className="mt-auto flex items-center justify-end pt-5 border-t border-border">
                   <Link
                     href={`/services#${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm text-foreground/70 hover:text-accent transition-colors w-fit"
