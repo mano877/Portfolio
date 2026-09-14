@@ -4,6 +4,7 @@ import type { Project } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { ChefHat, Stethoscope, ListChecks, Headset, Sofa, ArrowRight, ArrowUpRight } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
 
 const ICONS = {
   restobot: ChefHat,
@@ -87,8 +88,23 @@ export function ProjectCard({ project }: { project: Project }) {
               }}
               className="inline-flex items-center gap-1.5 text-sm text-foreground/70 hover:text-accent transition-colors w-fit"
             >
-              View Live Site
+              {project.liveUrlLabel ?? "View Live Demo"}
               <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
+          )}
+
+          {project.githubUrl && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(project.githubUrl, "_blank", "noopener,noreferrer");
+              }}
+              className="inline-flex items-center gap-1.5 text-sm text-foreground/70 hover:text-accent transition-colors w-fit"
+            >
+              View Source
+              <FiGithub className="w-3.5 h-3.5" />
             </button>
           )}
         </div>

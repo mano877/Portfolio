@@ -3,6 +3,7 @@ import { getProject, projects } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
 import { ChefHat, Stethoscope, ListChecks, Headset, Sofa, ArrowUpRight } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
 import BackToProjects from "@/components/BackToWork";
 
 const emoji = {
@@ -53,17 +54,33 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           )}
         </Reveal>
 
-        {project.liveUrl && (
+        {(project.liveUrl || project.githubUrl) && (
           <Reveal delay={0.03}>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition mb-10 w-fit"
-            >
-              Visit Live Site
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+            <div className="flex flex-wrap gap-3 mb-10">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition w-fit"
+                >
+                  {project.liveUrlLabel ?? "View Live Demo"}
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              )}
+
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 rounded-lg font-medium hover:bg-foreground/5 transition-colors w-fit"
+                >
+                  View Source
+                  <FiGithub className="w-4 h-4" />
+                </a>
+              )}
+            </div>
           </Reveal>
         )}
 

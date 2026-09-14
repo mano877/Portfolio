@@ -25,6 +25,8 @@ export type Project = {
   /** Optional captions shown under each screenshot, index-aligned with `screenshots`. */
   screenshotCaptions?: string[];
   liveUrl?: string;
+  /** Overrides the default "View Live Demo" label on the liveUrl button, e.g. "Visit Live Site" for a real client site. */
+  liveUrlLabel?: string;
   githubUrl?: string;
 };
 
@@ -73,6 +75,7 @@ export const projects: Project[] = [
       "Customized the category experience to help visitors explore furniture by room type.",
     ],
     liveUrl: "https://longlife.bizfatt.com/",
+    liveUrlLabel: "Visit Live Site",
   },
   {
     slug: "restobot",
@@ -118,6 +121,7 @@ export const projects: Project[] = [
   "/projects/restobot/orders.png",
   "/projects/restobot/recommendations.png",
 ],
+    githubUrl: "https://github.com/mano877/restobot-frontend",
   },
   {
     slug: "dr-aria",
@@ -164,6 +168,7 @@ export const projects: Project[] = [
   "/projects/dr-aria/documents.png",
 ],
     liveUrl: "https://medical-chatbot-frontend-rpoc-git-main-eman-fd69.vercel.app/",
+    githubUrl: "https://github.com/mano877/medical-chatbot-frontend",
     },
 
     {
@@ -213,6 +218,7 @@ export const projects: Project[] = [
     "/projects/task-manager/analytics.png",
     "/projects/task-manager/settings.png",
   ],
+  githubUrl: "https://github.com/mano877/task-manager-frontend",
 },
 
   {
@@ -264,6 +270,7 @@ export const projects: Project[] = [
       "/projects/customer-care/admin-dashboard.png",
       "/projects/customer-care/feedback.png",
     ],
+    githubUrl: "https://github.com/mano877/ai-customer-care-frontend",
   },
 
     ]

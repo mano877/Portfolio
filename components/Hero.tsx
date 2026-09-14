@@ -81,14 +81,14 @@ export default function Hero() {
             onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
             className="px-7 py-3.5 bg-foreground text-background rounded-lg font-medium shadow-md hover:shadow-lg transition-shadow"
           >
-            Explore the Work
+            Explore Projects
           </MagneticButton>
 
           <MagneticButton
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="px-7 py-3.5 border border-foreground/20 rounded-lg font-medium hover:border-foreground/40 hover:bg-foreground/5 transition-colors"
           >
-            Book a Consultation
+            Let&apos;s Talk
           </MagneticButton>
         </motion.div>
       </div>

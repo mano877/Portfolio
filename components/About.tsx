@@ -16,11 +16,12 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Behind the Work</h2>
 
           <p className="text-foreground/80 leading-relaxed text-center mb-10">
-            Behind every project is a business trying to do something better: attract more
-            customers, simplify a workflow, or build a stronger digital presence. Good
-            technology is built around that need, across the whole stack: a reliable
-            backend, a polished interface, structured data behind an AI assistant, and the
-            automation that connects it all.
+            Backend-focused, building practical AI solutions, automation, and full-stack web
+            applications around real business problems. The core stack is Python, FastAPI, and
+            PostgreSQL, extended with LLM integrations and retrieval-augmented (RAG) systems
+            when they&apos;re the right tool for the job. The goal stays the same across every
+            project: reliable APIs, automation that removes real manual work, and software
+            that solves the problem it was actually built for.
           </p>
         </Reveal>
 
