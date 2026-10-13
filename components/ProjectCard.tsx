@@ -29,7 +29,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className={`relative shrink-0 aspect-video overflow-hidden ${fit === "contain" ? "bg-card" : ""}`}>
         {project.image ? (
           <Image
-            src={`/projects/${project.slug}/${project.image}`}
+            src={`/projects/${project.slug.toLowerCase()}/${project.image}`}
             alt={project.title}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"

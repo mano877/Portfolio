@@ -229,7 +229,7 @@ export const projects: Project[] = [
   },
 
 {
-    slug: "Longlife-furnishers",
+    slug: "longlife-furnishers",
     emoji: "longlife-furnishers",
     category: "Website Design & AI Integration",
     filterCategories: ["Web Development" , "AI Solutions"],
