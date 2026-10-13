@@ -27,7 +27,7 @@ const ICONS = {
   "automation-integration": LayoutDashboard,
 } as const;
 
-const CONSULTATION_PHONE = "923124467526";
+const CONSULTATION_PHONE = "923228639188";
 
 function whatsappLink(message: string) {
   return `https://wa.me/${CONSULTATION_PHONE}?text=${encodeURIComponent(message)}`;

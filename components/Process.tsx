@@ -113,7 +113,7 @@ export default function Process() {
             smarter business workflow, it starts with understanding what needs to work better.
           </p>
           <a
-            href="https://wa.me/923124467526?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20an%20AI%20solution%20for%20my%20business."
+            href="https://wa.me/923228639188?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20an%20AI%20solution%20for%20my%20business."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:opacity-90 transition"

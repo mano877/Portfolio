@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
-  const Icon = emoji[slug as keyof typeof emoji];
+  const Icon = emoji[slug as keyof typeof emoji] ?? Sofa;
 
   return (
     <main className="min-h-screen text-foreground px-6 py-20">
