@@ -233,7 +233,7 @@ export const projects: Project[] = [
     emoji: "longlife-furnishers",
     category: "Website Design & AI Integration",
     filterCategories: ["Web Development" , "AI Solutions"],
-    image: "homepage-hero.png",
+    image: "homepage-hero.PNG",
     tags: [ "WordPress",
   "Elementor",
   "WooCommerce",
