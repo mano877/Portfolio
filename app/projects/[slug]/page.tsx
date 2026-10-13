@@ -139,7 +139,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   return (
                     <figure key={src}>
                       <div className="relative aspect-video rounded-lg overflow-hidden border border-border">
-                        <Image src={src} alt={caption ?? project.title} fill className="object-cover" />
+                        <Image
+  src={src}
+  alt={caption ?? project.title}
+  fill
+  sizes="(max-width: 640px) 100vw, 384px"
+  className="object-cover"
+/>
                       </div>
                       {caption && (
                         <figcaption className="mt-2 text-xs text-muted leading-relaxed">{caption}</figcaption>
