@@ -267,11 +267,11 @@ export const projects: Project[] = [
     lessonsLearned:
        "This project brought traditional WordPress development and custom AI integration together. It involved adapting WooCommerce for a showroom-only business model, connecting a custom chatbot to a WordPress frontend, and refining responsive layouts and customer interactions while working within an existing theme.",
     screenshots: [
-      "/projects/longlife-furnishers/homepage-hero.png",
-      "/projects/longlife-furnishers/ai-chatbot.png",
-      "/projects/longlife-furnishers/our-story.png",
-      "/projects/longlife-furnishers/product-catalogue.png",
-      "/projects/longlife-furnishers/styles.png",
+      "/projects/longlife-furnishers/homepage-hero.PNG",
+      "/projects/longlife-furnishers/ai-chatbot.PNG",
+      "/projects/longlife-furnishers/our-story.PNG",
+      "/projects/longlife-furnishers/product-catalogue.PNG",
+      "/projects/longlife-furnishers/styles.PNG",
     ],
     screenshotCaptions: [
       "Designed a modern furniture showroom homepage with custom layouts, clear navigation, and prominent calls to action.",
