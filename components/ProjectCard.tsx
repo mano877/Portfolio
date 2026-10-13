@@ -33,6 +33,7 @@ export function ProjectCard({ project }: { project: Project }) {
             alt={project.title}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
+            unoptimized
             className={`transition-transform duration-500 group-hover:scale-[1.03] ${
               fit === "contain" ? "object-contain" : "object-cover object-center"
             }`}
