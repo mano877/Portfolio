@@ -31,6 +31,63 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+
+{
+    slug: "longlife-furnishers",
+    emoji: "longlife-furnishers",
+    category: "Website Design & AI Integration",
+    filterCategories: ["Web Development" , "AI Solutions"],
+    image: "homepage-hero.PNG",
+    tags: [ "WordPress",
+  "Elementor",
+  "WooCommerce",
+  "AI Chatbot",
+  "Groq API",
+  "WhatsApp Integration"],
+    title: "Longlife Furnishers | AI-Powered Furniture Showroom",
+    outcome:
+      "Transformed Long Life Furnishers' online presence into an AI-powered furniture showroom, combining a responsive product catalogue, intelligent customer assistance, and direct WhatsApp enquiries.",
+    builtWith: ["WordPress", "Elementor"],
+    features: [
+      "Responsive furniture showroom and product catalogue",
+  "AI-powered customer assistant using Groq",
+  "Custom chatbot widget integrated into WordPress",
+  "Furniture browsing by room and style",
+  "WooCommerce catalogue without online checkout",
+  "Direct WhatsApp product enquiries",
+  "Custom layouts, styling, and interactive elements",
+  "Mobile-responsive navigation and chatbot interface",
+  "SEO optimization and performance improvements",
+],
+    problem:
+      "Long Life Furnishers needed a professional digital presence that reflected its established furniture business. Customers needed an easier way to explore products, find business information, and make enquiries without relying entirely on showroom visits or manual communication.",
+
+    idea:
+      "Create a digital showroom that presents the furniture collection clearly, supports natural product discovery, and makes customer enquiries easier through AI assistance and WhatsApp.",
+    solution:
+     "Customized WordPress and Elementor to build a responsive furniture showroom, using WooCommerce for product catalogue management without enabling online checkout. Integrated a custom AI chatbot powered by a FastAPI backend and Groq API to assist visitors with furniture-related questions. Added WhatsApp enquiry functionality, responsive layouts, custom styling, and SEO improvements.",
+    resultPurpose:
+      "A live AI-powered furniture showroom where visitors can explore products, interact with an AI assistant, and contact the business directly through WhatsApp. The website combines product discovery and customer assistance in one experience.",
+    lessonsLearned:
+       "This project brought traditional WordPress development and custom AI integration together. It involved adapting WooCommerce for a showroom-only business model, connecting a custom chatbot to a WordPress frontend, and refining responsive layouts and customer interactions while working within an existing theme.",
+    screenshots: [
+      "/projects/longlife-furnishers/homepage-hero.PNG",
+      "/projects/longlife-furnishers/ai-chatbot.PNG",
+      "/projects/longlife-furnishers/our-story.PNG",
+      "/projects/longlife-furnishers/product-catalogue.PNG",
+      "/projects/longlife-furnishers/styles.PNG",
+    ],
+    screenshotCaptions: [
+      "Designed a modern furniture showroom homepage with custom layouts, clear navigation, and prominent calls to action.",
+      "Integrated a custom AI chatbot powered by Groq to answer customer questions about furniture, showroom hours, and location.",
+      "Created an interactive brand story highlighting over 40 years of craftsmanship, with English and Urdu language support.",
+      "Customized the WooCommerce product catalogue with furniture listings, product details, and direct WhatsApp enquiries without an online checkout.",
+      "Designed a dedicated furniture styles page with curated collections, custom layouts, and direct WhatsApp enquiry options.",
+    ],
+    liveUrl: "https://longlife.bizfatt.com/",
+    liveUrlLabel: "Visit Live Site",
+  },
+
 {
     slug: "restobot",
     emoji: "restobot",
@@ -228,61 +285,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/mano877/ai-customer-care-frontend",
   },
 
-{
-    slug: "longlife-furnishers",
-    emoji: "longlife-furnishers",
-    category: "Website Design & AI Integration",
-    filterCategories: ["Web Development" , "AI Solutions"],
-    image: "homepage-hero.PNG",
-    tags: [ "WordPress",
-  "Elementor",
-  "WooCommerce",
-  "AI Chatbot",
-  "Groq API",
-  "WhatsApp Integration"],
-    title: "Longlife Furnishers | AI-Powered Furniture Showroom",
-    outcome:
-      "Transformed Long Life Furnishers' online presence into an AI-powered furniture showroom, combining a responsive product catalogue, intelligent customer assistance, and direct WhatsApp enquiries.",
-    builtWith: ["WordPress", "Elementor"],
-    features: [
-      "Responsive furniture showroom and product catalogue",
-  "AI-powered customer assistant using Groq",
-  "Custom chatbot widget integrated into WordPress",
-  "Furniture browsing by room and style",
-  "WooCommerce catalogue without online checkout",
-  "Direct WhatsApp product enquiries",
-  "Custom layouts, styling, and interactive elements",
-  "Mobile-responsive navigation and chatbot interface",
-  "SEO optimization and performance improvements",
-],
-    problem:
-      "Long Life Furnishers needed a professional digital presence that reflected its established furniture business. Customers needed an easier way to explore products, find business information, and make enquiries without relying entirely on showroom visits or manual communication.",
-
-    idea:
-      "Create a digital showroom that presents the furniture collection clearly, supports natural product discovery, and makes customer enquiries easier through AI assistance and WhatsApp.",
-    solution:
-     "Customized WordPress and Elementor to build a responsive furniture showroom, using WooCommerce for product catalogue management without enabling online checkout. Integrated a custom AI chatbot powered by a FastAPI backend and Groq API to assist visitors with furniture-related questions. Added WhatsApp enquiry functionality, responsive layouts, custom styling, and SEO improvements.",
-    resultPurpose:
-      "A live AI-powered furniture showroom where visitors can explore products, interact with an AI assistant, and contact the business directly through WhatsApp. The website combines product discovery and customer assistance in one experience.",
-    lessonsLearned:
-       "This project brought traditional WordPress development and custom AI integration together. It involved adapting WooCommerce for a showroom-only business model, connecting a custom chatbot to a WordPress frontend, and refining responsive layouts and customer interactions while working within an existing theme.",
-    screenshots: [
-      "/projects/longlife-furnishers/homepage-hero.PNG",
-      "/projects/longlife-furnishers/ai-chatbot.PNG",
-      "/projects/longlife-furnishers/our-story.PNG",
-      "/projects/longlife-furnishers/product-catalogue.PNG",
-      "/projects/longlife-furnishers/styles.PNG",
-    ],
-    screenshotCaptions: [
-      "Designed a modern furniture showroom homepage with custom layouts, clear navigation, and prominent calls to action.",
-      "Integrated a custom AI chatbot powered by Groq to answer customer questions about furniture, showroom hours, and location.",
-      "Created an interactive brand story highlighting over 40 years of craftsmanship, with English and Urdu language support.",
-      "Customized the WooCommerce product catalogue with furniture listings, product details, and direct WhatsApp enquiries without an online checkout.",
-      "Designed a dedicated furniture styles page with curated collections, custom layouts, and direct WhatsApp enquiry options.",
-    ],
-    liveUrl: "https://longlife.bizfatt.com/",
-    liveUrlLabel: "Visit Live Site",
-  },
 ];
 
 export function getProject(slug: string) {
